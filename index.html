@@ -53,10 +53,20 @@
     </div>
     
     <div class="sidenav" style="right:0">
-  <a href="#">Your Checklists</a>
+  <div class="dropdown">
+        <button class="dropbtn" onclick="myFunction()">Your Checklists
+      <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content" id="myDropdown">
+      <a href="#">Checklist 1</a>
+          <a href="#">Checklist 2</a>
+          <a href="#">Checklist 3</a>
+      
+      </div>
   <a href="#">Design</a>
   <a href="#">Share List</a>
   <a href="#">Contact</a>
+        </div>
 </div>
 
     <div contenteditable="true" id="myDIV" class="header">
@@ -168,6 +178,20 @@ function checkCookie() {
     }
   }
 } 
+    
+    function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(e) {
+  if (!e.target.matches('.dropbtn')) {
+  var myDropdown = document.getElementById("myDropdown");
+    if (myDropdown.classList.contains('show')) {
+      myDropdown.classList.remove('show');
+    }
+  }
+}
     
     </script>
 
